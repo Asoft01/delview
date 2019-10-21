@@ -23,6 +23,5 @@ class Admin
         }
 
         return redirect('/');
-
     }
 }
