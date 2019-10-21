@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\User;
 use App\Role;
 use App\Photo;
+use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
 {
@@ -65,6 +66,7 @@ class AdminUsersController extends Controller
         }
 
         User::create($input);
+        Session::flash('created_user', 'The user has been Created');
         return redirect('/admin/users');
 //       return $request->all();
     }
@@ -123,6 +125,7 @@ class AdminUsersController extends Controller
             $input['photo_id']= $photo->id;
         }
         $user->update($input);
+        Session::flash('updated_user', 'The user has been updated');
         return redirect('/admin/users');
 
 //        return $request->all();
@@ -136,7 +139,20 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
-        return view('admin.users.destroy');
+        // Working perfectly without deleting the user;
+//
+//        User::findorFail($id)->delete();
+//
+////        $request->session  But the session needs to be injected into the public function
+//        Session::flash('deleted_user', 'The user has been deleted');
+//        return redirect('/admin/users');
+
+        $user= User::findorFail($id);
+        // The $user->photo->file is working with the accessor
+        unlink(public_path(). $user->photo->file);
+        $user->delete();
+        Session::flash('deleted_user', 'The user has been deleted');
+        return redirect('/admin/users');
+//        return view('admin.users.destroy');
     }
 }
