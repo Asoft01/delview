@@ -40,7 +40,7 @@
 <body>
 <div class="container">
     <div class="content">
-        <div class="title">404 ERROR</div>
+        <div class="title">Opps!!! No page Available</div>
     </div>
 </div>
 </body>
