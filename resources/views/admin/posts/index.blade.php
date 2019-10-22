@@ -26,7 +26,8 @@
                 <td>{{$post->id}}</td>
                 <td><img height="50" width="50" src="{{$post->photo ? $post->photo->file : '/images/no-image1.jpg' }}"></td>
                 <td>{{$post->user->name}}</td>
-                <td>{{$post->category_id}}</td>
+{{--                <td>{{$post->category_id}}</td>--}}
+                <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
                 <td>{{$post->title}}</td>
                 <td>{{$post->body}}</td>
                 <td>{{$post->created_at->diffForHumans()}}</td>
