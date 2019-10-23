@@ -16,11 +16,15 @@
         {!! Form::label('category_id', 'Category:') !!}
         {!! Form::select('category_id', [''=>'Choose Categories'] + $categories , null, ['class'=>'form-control'])!!}
         {{--{!! Form::select('role_id', [''=>'Choose Options'] + $roles , null, ['class'=>'form-control'])!!}--}}
+
     </div>
+
+
 
     <div class="form-group">
         {!! Form::label('photo_id', 'Photo:') !!}
         {!! Form::file('photo_id', null, ['class'=>'form-control'])!!}
+
     </div>
 
     <div class="form-group">
