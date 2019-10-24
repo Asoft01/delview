@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Categories</h1>
+    <h1>Edit Categories</h1>
     <div class="col-sm-6">
         {!! Form::model($category, ['method'=>'PATCH', 'action'=>['AdminCategoriesController@update', $category->id]]) !!}
 

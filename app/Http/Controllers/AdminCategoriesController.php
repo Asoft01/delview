@@ -18,8 +18,13 @@ class AdminCategoriesController extends Controller
         //
         $categories= Category::all();
         return view('admin.categories.index', compact('categories'));
+
     }
 
+    public function create()
+    {
+        //
+    }
 
 
     /**
@@ -33,6 +38,7 @@ class AdminCategoriesController extends Controller
         //
         Category::create($request->all());
         return redirect('/admin/categories');
+
     }
 
     /**
@@ -57,6 +63,7 @@ class AdminCategoriesController extends Controller
         //
         $category= Category::findOrFail($id);
         return view('admin.categories.edit', compact('category'));
+
     }
 
     /**
@@ -85,5 +92,6 @@ class AdminCategoriesController extends Controller
         //
         Category::findorfail($id)->delete();
         return redirect('/admin/categories');
+
     }
 }
