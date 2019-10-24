@@ -10,7 +10,7 @@
              <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Created </th>
+                <th>Created</th>
                 <th>Email</th>
               </tr>
             </thead>
