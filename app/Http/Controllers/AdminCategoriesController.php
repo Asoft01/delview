@@ -79,6 +79,7 @@ class AdminCategoriesController extends Controller
         $category = Category::findorFail($id);
         $category->update($request->all());
         return redirect('/admin/categories');
+
     }
 
     /**
